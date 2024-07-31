@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input:focus {
+            outline: none;
+            /*포커스 시 기본 보더 x*/
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <pre>
+        아이디 값이 변경 되면 예시 처럼 구현. 
+        힌트: keyup 이벤트 , change
+        문자열 길이: length
+    </pre>
+
+    아이디: <input type="text" name="id">
+    <span class="idMsg"></span>
+
+    <script>
+        var idTag = document.querySelector("input[name=id]");
+        var idMsg = document.querySelector(".idMsg");
+
+        idTag.onkeyup = function () { //키보드 누를 떄마다 동작
+
+            if (idTag.value.length < 4) { //길이가 4보다 작은 경우
+                idTag.style.border = "1px solid red";
+                idMsg.innerHTML = "아이디를 4글자 이상 입력하세요"
+            } else {
+                idTag.style.border = "1px solid green";
+                idMsg.innerHTML = "";
+            }
+
+
+
+            // for(var i = 0; i < id.length; i++) {
+            //     arr.push(id[i]);
+            //     if(id[i].length < 4) {
+            //         idMsg.innerHTML = "아이디를 4글자 이상 입력하세요"
+            //         id.style.borderColor = red;
+            //     } else {
+            //         id.style.borderColor = green;
+            //     }
+            // }
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

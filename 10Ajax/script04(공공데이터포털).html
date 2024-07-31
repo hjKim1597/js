@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    4e764b476c796f703538514f5a5051
+    <!-- PWAxV7fHrzLszvSbQbIA7lWbtITYetFIaaMtK0PR%2BlA4PWR2tU8EOHpZoReOncq%2Bp6BCt8KOvJ2uKtHxPr%2Fz3Q%3D%3D
+    PWAxV7fHrzLszvSbQbIA7lWbtITYetFIaaMtK0PR+lA4PWR2tU8EOHpZoReOncq+p6BCt8KOvJ2uKtHxPr/z3Q== -->
+
+    <script>
+        // 공공데이터 포털을 사용하다보면 CORS 나오는 경우 -서버에서 거절당해서 사용불가
+
+        var key = "4e764b476c796f703538514f5a5051";
+
+        fetch("http://openapi.seoul.go.kr:8088/4e764b476c796f703538514f5a5051/json/bikeList/1/5/")
+        .then(function(response) {
+           return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        })
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a href="script05_ok.html">ok 페이지로 이동</a>
+
+    <button type="button" onclick="history.go(1)">앞으로가기</button>
+
+
+    <button type="button" onclick="move()">기록변경하기</button>
+
+
+    <script>
+
+        function move() {
+            // history.pushState = 브라우저의 기록을 추가할 때
+            // history.replaceState = 브라우저의 기록을 변경할 때
+            // history.pushState(null, '', "변경.html") //(괄호안) 추가할데이터, 제목, 추가될URL
+            
+            // 사용자의 뒤로가기 버튼을 감지해서 처리할 수 있음
+            history.replaceState('back', '', null); //추가할데이터, 제목, 추가될URL
+
+        }
+
+        // history.state - 브라우저 데이터 찾을 수 있음
+        // console.log(history.state); //사용자의 뒤로가기가 언제 일어났는지 확인 가능
+        // 쇼핑몰의 결제페이지에서 뒤로가기 시 뜨는 경고창과 같음
+        if (history.state == 'back') {
+            alert ("사용자가 뒤로가기를 통해 페이지로 접근함, 접근할 수 없는 페이지 입니다.")
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

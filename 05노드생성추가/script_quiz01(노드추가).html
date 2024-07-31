@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      thead th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="addLists">5개추가하기</button>
+    <button type="button" id="addList">1개추가하기</button>
+
+    <table>
+      <thead class="todoHead">
+        <tr>
+          <th>교시</th>
+          <th>훈련과목</th>
+          <th>담당자</th>
+          <th>훈련내용</th>
+        </tr>
+      </thead>
+      <tbody class="todoList">
+        <tr class="todo">
+          <td><input type="text" size="3" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" size="5" /></td>
+          <td><input type="text" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      var five = document.getElementById("addLists");
+      var one = document.getElementById("addList");
+      var todoList = document.querySelector(".todoList");
+
+      // 한줄 생성
+      addList.onclick = function () {
+        createTag();
+      };
+      //5줄 생성
+      addLists.onclick = function () {
+        for (var i = 1; i <= 5; i++) {
+          createTag();
+        }
+      };
+
+      function createTag() {
+        var tr = document.createElement("tr");
+        //1st
+        // var td = document.createElement("td");
+        // var input = document.createElement("input");
+        // input.type = "text";
+        // input.size = 5;
+        // td.appendChild(input)
+        // tr.appendChild(td);
+
+        //2nd
+        var str = ""; //문자열을 하나 만들고 표의 값들을 str에 하나씩 더함
+        str += '<td><input type="text" size="3"></td>';
+        str += '<td><input type="text"></td>';
+        str += '<td><input type="text" size="5"></td>';
+        str += '<td><input type="text"></td>';
+
+        tr.innerHTML = str;
+        todoList.appendChild(tr);
+      }
+
+      //   var todoHead = document.querySelector(".todoHead");
+
+      // five.addEventListener("click", function () {
+      //   for (var i = 0; i <= 5; i++) {
+      //     var tr = document.createElement("tr");
+      //     var td = document.createElement("td");
+      //     var input = document.createElement("input");
+      //     input.type = "text";
+      //     input.size = 3;
+
+      //     todoList.appendChild(tr);
+      //     tr.appendChild(td);
+      //     td.appendChild(input);
+
+      //   }
+      // });
+
+      // one.addEventListener("click", function () {
+      //   var tr = document.createElement("tr");
+      //   var td = document.createElement("td");
+      //   var input = document.createElement("input");
+      //   input.type = "text";
+      //     input.size = 3;
+
+      //   todoList.appendChild(tr);
+      //   tr.appendChild(td);
+      //   td.appendChild(input);
+
+      // });
+    </script>
+  </body>
+</html>

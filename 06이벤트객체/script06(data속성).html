@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>부트스트랩을 쓰다보면 data- 속성을 본적이 있다 없다??!</h3>
+
+    <ul class="nameList">
+                                                                    <!-- json 적용 키값이 쌍따옴표로 묶임 -->
+        <li><a href="#" data-info="20" data-addr="서울시" data-user='{"id": "aaa123", "age": 20}'>홍길동</a></li>  <!-- data-아무이름="" -->
+        <li><a href="#" data-info="30" data-addr="경기도" data-user='{"id": "bbb123", "age": 30}'>이순신</a></li>
+        <li><a href="#" data-info="40" data-addr="남양주" data-user='{"id": "ccc123", "age": 40}'>홍길자</a></li>
+        <li><a href="#" data-info="70" data-addr="호평동" data-user='{"id": "ddd123", "age": 70}'>강감찬</a></li>
+    </ul>
+
+    <script>
+        var nameList = document.querySelector(".nameList");
+        nameList.onclick = function() {
+            
+            event.preventDefault(); //고유 이벤트 중단
+
+            if(event.target.tagName != "A"); // A태그가 아니면 중단
+
+            console.log(event.target.dataset.info); // data-info에 저장되는 값  /콘솔 dir로 찍으면서 한단계씩 내려가면서 출력함
+
+            console.log(event.target.dataset.addr); //data-addr에 저장되는 값
+
+            console.log(event.target.dataset.user); //
+
+            var obj = JSON.parse(event.target.dataset.user);
+            console.log(obj);
+        }
+    </script>
+
+</body>
+</html>

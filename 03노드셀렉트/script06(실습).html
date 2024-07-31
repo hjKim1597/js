@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input class="cnt" type="number" value="0" readonly>
+    <button id="up">+</button>
+    <button id="down">-</button>
+
+    <script>
+        var cnt = document.querySelector(".cnt");
+        var up = document.getElementById("up");
+        var down = document.getElementById("down");
+
+        up.onclick = function() {
+            cnt.value++;
+        }
+        down.onclick = function() {
+            if(cnt.value == 0) {
+                alert('0이하는 불가능합니다');
+                return;
+            }
+            
+            
+            cnt.value--;
+        }
+
+
+        // cnt.addEventListener('click', function(){
+           
+
+        // })
+        // up.addEventListener('click', function(){
+        //     cnt.innerHTML
+        // }) 
+        // down.addEventListener('click', function(){}) 
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fetch("hello.txt")
+        // .then(function(response) {
+        //     response.text().then(function(data) {
+        //         console.log(data); //hello world
+        //     })
+        // });
+
+        /*
+            Promise는 fetch의 실행결과를 반환해주는 객체이자,
+            3가지의 상태를 나타냄
+            1.fulfilled - 성공적 수행
+            2. pending - 대기중
+            3. reject -거절(실패)
+
+            이 객체 안에는 then(콜백)
+            콜백은 << 실행결과가 얼마나 걸릴지 모르니, call했을 때 결과를 back 받을 함수
+        */
+
+    //     var promise = fetch("hello.txt") //(요청주소) - Promise 객체 반홚
+    //    promise.then(function(response) {
+    //     console.log(response);
+    //    })
+
+    // 순서 보장이 되지 않음;
+        // console.log(1);
+        // fetch("hello.txt")
+        // .then(function(response) {
+        //     console.log(response);
+        // console.log(2);
+        // })
+        // console.log(3);
+
+        //3rd
+        // fetch("hello.txt")
+        // .then(function(response) {
+        //     // console.log(response);
+        //     if(response.status != 200) {
+        //         console.log("요청에 실패했습니다.");
+        //         return;
+        //     }
+
+        //     // console.log(response);
+        //     // response에서 데이터를 꺼냄
+        //     // text() 함수는 문자열의 형태로 데이터를 꺼냄 - 반환은 Promise 객체
+        //     response.text().then(function(data) {
+        //         console.log(data);
+        //     })
+        // })
+
+        //4th - json 타입을 받는 경우
+        // fetch("hello.json")
+        // .then(function(response) {
+
+        //     response.json().then(function(data) {
+        //         console.log(data);
+        //     })
+        // })
+
+        //5th
+        fetch("hello.json")
+        .then(function(response) {
+
+            return response.json(); // 리턴에 리스폰스를 걸면 바깥에서 .then할 수 있음
+        })
+        .then(function(data) {
+            return data;
+        })
+        .then(function(data) {
+            return data;
+        })
+        .then(function(data) {
+            console.log(data);
+        })
+        .catch(function(e) {
+            console.log(e);
+        })
+    </script>
+</body>
+</html>
