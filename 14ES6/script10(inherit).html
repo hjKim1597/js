@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    class Shape {
+        func = () => {
+            console.log("안녕!");
+            
+        }
+    }
+
+    class Rect extends Shape {
+        
+        constructor(width, height) {
+            super(); //js 는 생성자를 오버로딩하면 , super() 부모님과 반드시 연결이 필요함
+            this.width = width;
+            this.height = height;
+        }
+
+        func = () => {
+            console.log("오버라이딩!");
+            
+        }
+    }
+    
+    let r = new Rect(); //안녕! 출력 => 물려받음
+    r.func();
+
+
+</script>
+
+</body>
+</html>

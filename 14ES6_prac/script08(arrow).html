@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+         let arr = [1,2,3];
+
+         //1
+         arr.forEach(function(v,i) {console.log(v, i);})
+         arr.forEach( (v,i) => {console.log(v,i);})
+
+         //2
+        //  setInterval(function() { 
+        //     console.log(1);            
+        //  }, 1000);
+         //setInterval은 특정 작업을 주기적으로 반복 실행할 때 사용하는 메서드
+         
+        //3
+        // fetch("url")
+        // .then(function(response) {
+        //     return response.json();
+        // })
+        // .then(function(data) {
+        //     console.log(data);            
+        // })
+        fetch(url)
+        .then(response => response.json())
+        .then(data => console.log());
+
+    </script>
+</body>
+</html>
